@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
   def index
-    SearchFacade.search(params[:nation])
+    @members = SearchFacade.search(params[:nation])
   end
 end

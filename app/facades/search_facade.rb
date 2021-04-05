@@ -5,7 +5,7 @@ class SearchFacade
     response = conn.get('api/v1/characters',
       { 'affiliation': "#{term}", 'perPage': '100' }) 
       data = JSON.parse(response.body, symbolize_names: true)
-      @members = data.map do |fire|
+      data.map do |fire|
         FireNation.new(fire)
       end
   end
