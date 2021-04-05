@@ -16,7 +16,7 @@ RSpec.describe 'As a user visiting root_path' do
       select 'Fire Nation',  from: 'nation'
       click_button 'Search For Members'
 
-      expect(page).to have_content("Total Number of People in Fire Nation: 97")
+      expect(page).to have_content("Total Number of people in Fire Nation: 97")
     end
     it 'Should have a list of detailed info for first 25 members' do 
       visit root_path
@@ -33,7 +33,6 @@ RSpec.describe 'As a user visiting root_path' do
     end
   end
 end
-
 # As a user,
 # When I visit "/"
 # And I Select "Fire Nation" from the select field
