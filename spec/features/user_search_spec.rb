@@ -2,7 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'As a user visiting root_path' do
   describe 'When I select "Fire Nation" from select field' do
-    it 'Takes me to /search page'
+    it 'Takes me to /search page' do
+      visit root_path
+
+      select 'Fire Nation',  from: 'nation'
+      click_button 'Search For Members'
+
+      expect(current_path).to eq('/search')
+    end
     it 'Should show total number of people in Fire Nation'
     it 'Should have a list of detailed info for first 25 members'
     it 'For each member see name & photo, allies, enemies, and affiliations'
