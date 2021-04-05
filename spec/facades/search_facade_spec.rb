@@ -9,4 +9,12 @@ RSpec.describe SearchFacade do
     expect(expected).to be_an Array
     expect(expected.length).to eq 97
   end
+  it "Can return less members" do
+    search_term = "fire_nation"
+    quantity = 10
+
+    expected = SearchFacade.search(search_term, quantity)
+
+    expect(expected.length).to eq 10
+  end
 end

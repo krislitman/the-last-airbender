@@ -11,4 +11,11 @@ RSpec.describe FireNationService do
     expect(expected.length).to eq 97
     expect(expected[0]).to be_an_instance_of FireNation
   end
+  it 'Still returns 97 if no quantity given' do
+    term = "Fire Nation"
+
+    expected = FireNationService.search(term)
+
+    expect(expected.length).to eq 97
+  end
 end

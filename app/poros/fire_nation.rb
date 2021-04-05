@@ -4,7 +4,6 @@ class FireNation
               :allies,
               :enemies,
               :affiliation
-
   def initialize(data)
     @name = data[:name]
     @photo = data[:photoUrl]
