@@ -12,18 +12,18 @@ RSpec.describe 'As a user visiting root_path' do
     end
     it 'Should show total number of people in Fire Nation' do
       visit root_path
-
+      
       select 'Fire Nation',  from: 'nation'
       click_button 'Search For Members'
-
+      
       expect(page).to have_content("Total Number of people in Fire Nation: 97")
     end
     it 'Should have a list of detailed info for first 25 members' do 
       visit root_path
-
+      
       select 'Fire Nation',  from: 'nation'
       click_button 'Search For Members'
-
+      
       within('#first_members') do
         expect(page).to have_content("Name: Afiko")
         expect(page).to have_content("Affiliations: Fire Nation")
@@ -32,6 +32,16 @@ RSpec.describe 'As a user visiting root_path' do
         expect(page).to have_content("Allies: None")
         expect(page).to have_content("Enemies: None")
       end
+    end
+    it 'Should return Water Tribes on page if searching for that' do 
+      visit root_path
+      
+      select 'Water Tribes',  from: 'nation'
+      click_button 'Search For Members'
+      
+      expect(current_path).to eq('/search')
+      expect(page).to have_content("Water Tribes")
+      expect(page).to have_content("Total Number of people in Water Tribes: 1")
     end
   end
 end
