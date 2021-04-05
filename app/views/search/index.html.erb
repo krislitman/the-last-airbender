@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
-      <p class ="navbar-brand">Fire Nation</p>
+      <p class ="navbar-brand"><%= @nation %></p>
 <div class="airbender-container">
       <%= image_tag("avatar.jpg", class: "airbender") %>
 
-<p>Total Number of people in Fire Nation: <%= @members.count %></p>
+<p>Total Number of people in <%= @nation %>: <%= @members.count %></p>
  </div>
 
  <%= render partial: 'members', locals: { members: @members } %>

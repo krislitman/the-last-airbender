@@ -26,7 +26,7 @@ RSpec.describe 'As a user visiting root_path' do
 
       within('#first_members') do
         expect(page).to have_content("Name: Afiko")
-        expect(page).to have_content("Affiliation: Fire Nation")
+        expect(page).to have_content("Affiliations: Fire Nation")
         expect(page).to have_content("Allies: Fire Nation")
         expect(page).to have_content("Enemies: Aang")
         expect(page).to have_content("Allies: None")
