@@ -1,5 +1,5 @@
-class FireNationService
-  def self.search(term, quantity = 100)
+class SearchService
+  def self.search(term, quantity)
     response = conn.get('api/v1/characters',
       { 'affiliation': "#{term}", 'perPage': "#{quantity}" }) 
     data = JSON.parse(response.body, symbolize_names: true)
