@@ -9,6 +9,6 @@ RSpec.describe SearchService do
 
     expect(expected).to be_an Array
     expect(expected.length).to eq 97
-    expect(expected[0]).to be_an_instance_of FireNation
+    expect(expected[0]).to be_an_instance_of Member
   end
 end

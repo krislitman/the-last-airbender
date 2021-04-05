@@ -1,4 +1,4 @@
-class FireNation
+class Member
   attr_reader :name,
               :photo,
               :allies,

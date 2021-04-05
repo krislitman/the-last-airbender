@@ -3,8 +3,8 @@ class SearchService
     response = conn.get('api/v1/characters',
       { 'affiliation': "#{term}", 'perPage': "#{quantity}" }) 
     data = JSON.parse(response.body, symbolize_names: true)
-    data.map do |fire|
-      FireNation.new(fire)
+    data.map do |member_info|
+      Member.new(member_info)
     end
   end
 
