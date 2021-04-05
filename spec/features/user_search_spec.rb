@@ -10,12 +10,29 @@ RSpec.describe 'As a user visiting root_path' do
 
       expect(current_path).to eq('/search')
     end
-    it 'Should show total number of people in Fire Nation'
-    it 'Should have a list of detailed info for first 25 members'
-    it 'For each member see name & photo, allies, enemies, and affiliations'
+    it 'Should show total number of people in Fire Nation' do
+      visit root_path
+
+      select 'Fire Nation',  from: 'nation'
+      click_button 'Search For Members'
+
+      expect(page).to have_content("Total Number of People in Fire Nation: 97")
+    end
+    it 'Should have a list of detailed info for first 25 members' do 
+      visit root_path
+
+      select 'Fire Nation',  from: 'nation'
+      click_button 'Search For Members'
+
+      within('#first_members') do
+        expect(page).to have_content("Name: Afiko")
+        expect(page).to have_content("Affiliation: Fire Nation")
+        expect(page).to have_content("Allies: Fire Nation")
+        expect(page).to have_content("Enemies: Aang")
+      end
+    end
   end
 end
-
 
 # As a user,
 # When I visit "/"

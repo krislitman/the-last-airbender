@@ -7,4 +7,4 @@
 <p>Total Number of people in Fire Nation: <%= @members.count %></p>
  </div>
 
- <%  %>
+ <%= render partial: 'members', locals: { members: @members } %>

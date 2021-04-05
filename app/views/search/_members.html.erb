@@ -1,0 +1,23 @@
+<section class='first_members'>
+  <% members[0..24].each do |member|%>
+    <h3>Name: <%= member.name %></h3>
+    <% if member.photo %>
+      <%= image_tag member.photo %>
+    <% end %>
+    <% if !member.allies.empty? %>
+      <p>Allies: <% member.allies.each do |ally| %>
+        <%= ally %>
+      <% end %></p>
+    <% else %>
+      <p>Allies: None</p>
+    <% end %>
+    <% if !member.enemies.empty? %>
+      <p>Enemies: <% member.enemies.each do |enemy|%>
+        <%= enemy %>
+      <% end %></p>
+    <% else %>
+      <p>Enemies: None</p>
+    <% end %>
+    <p>Affiliation: <%= member.affiliation %></p>
+  <% end%>
+</section>
